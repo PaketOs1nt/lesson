@@ -1,28 +1,43 @@
-import os, random
-import socket
+class Student:
+    def __init__(self, name, startmoney=300, defrate=9):
+        self.startmoney = startmoney
+        self.defrate = defrate
+        self.skoka_let = 10
+        self.logs = [f'{name} started']
+        self.name = name
 
-class MegaNetworkHackerProUltraMicrosoftAppleHackForFree:
-    def __init__(self, port: int):
-        self.port = port
+    def rost(self):
+        self.skoka_let+=1
 
-    def create_mega_ultra_hack_server(self):
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        sock.bind(('0.0.0.0', self.port))
-        return sock
-    
-    def start_mega_server(self, sock: socket.socket, max_clients: int):
-        sock.listen(max_clients)
-    
-    def log_clifsefmnsdnfmsdnfmsdf_on_mega_server(self, sock: socket.socket):
-        while True:
-            clsock, addr = sock.accept()
-            print(f'OMAGAd new cliqermwnssd;af!!!!! ip: {addr[0]}!!!!! go to dgs bobd osent kids asdiasdiaidsd.l;kslakka!')
-            clsock.close()
+    def magazin(self, vesh, cena):
+        self.logs.append(f'купив {vesh} за {cena}')
+        if cena < self.startmoney:
+            self.startmoney-= cena
+            self.logs.append(f'купив {vesh} за {cena}')
+        else:
+            self.logs.append(f'не купив {vesh} за {cena} (бiмж)')
 
-def main():
-    sadassdadsa = MegaNetworkHackerProUltraMicrosoftAppleHackForFree(1487)
-    seraver = sadassdadsa.create_mega_ultra_hack_server()
-    sadassdadsa.start_mega_server(seraver, max_clients=123)
-    sadassdadsa.log_clifsefmnsdnfmsdnfmsdf_on_mega_server(seraver)
+    def live(self):
+        self.skoka_let += 1
+        self.logs.append(f'{self.name} {self.skoka_let}')
+        if self.skoka_let > 50:
+            self.magazin = exit
+            self.rost = exit
+            self.live = exit
 
-main()
+
+s = Student('alex')
+while True:
+    try:    
+        print(s.logs)
+        s.rost()
+        print(s.logs)
+        s.magazin('гераен', 123123)
+        print(s.logs)
+        s.magazin('марозива', 49)
+        print(s.logs)
+        s.live()
+        print(s.logs)
+    except:
+        print('alex помер.')
+        break
