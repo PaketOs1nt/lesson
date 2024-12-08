@@ -39,5 +39,4 @@ while True:
         s.live()
         print(s.logs)
     except:
-        print('alex помер.')
         break
