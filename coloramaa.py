@@ -11,4 +11,4 @@ table = {
 for obj, text in table.items():
     print(f"{colorama.Fore.GREEN}[{obj}]:\n{colorama.Fore.LIGHTGREEN_EX}{text}\n\n")
 
-input(colorama.Fore.YELLOW + 'На мою думку це найважливiшi компненти для користувача бiблiотеки colorama')
+input(colorama.Fore.YELLOW + 'На мою думку це найважливiшi компоненти для користувача бiблiотеки colorama')
