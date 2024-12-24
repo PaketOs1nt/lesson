@@ -2,6 +2,9 @@ import colorama
 
 colorama.init(autoreset=True)
 
+def asd(a, b):
+    return a+b
+
 table = {
     'colorama.init': "Дуже важлива функцiя для того щоб модуль працював нормально, по словам ChatGPT - патчить консоль (якщо на windows) для того щоб вона пiдтримувала ANSI",
     'colorama.Fore/Back': "Списки ANSI кодiв для того щоб мiняти кольор тексту або фону у деяких участках",
