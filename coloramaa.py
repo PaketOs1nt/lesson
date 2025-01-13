@@ -1,17 +1,12 @@
-import colorama
+import time
 
-colorama.init(autoreset=True)
-
-def asd(a, b):
-    return a+b
-
-table = {
-    'colorama.init': "Дуже важлива функцiя для того щоб модуль працював нормально, по словам ChatGPT - патчить консоль (якщо на windows) для того щоб вона пiдтримувала ANSI",
-    'colorama.Fore/Back': "Списки ANSI кодiв для того щоб мiняти кольор тексту або фону у деяких участках",
-    'colorama.Cursor': "Функкцiя для управлiнням курсором ввода у консолi"
-}
-
-for obj, text in table.items():
-    print(f"{colorama.Fore.GREEN}[{obj}]:\n{colorama.Fore.LIGHTGREEN_EX}{text}\n\n")
-
-input(colorama.Fore.YELLOW + 'На мою думку це найважливiшi компоненти для користувача бiблiотеки colorama')
+def capturetime(func):
+    def patched(*a, **kwa):
+        print(f'capturing time for function {func.__name__}')
+        time_s = time.time()
+        result = func(*a, **kwa)
+        time_e = time.time()
+        print(f'function {func.__name__} works {time_e-time_s:.1f} seconds')
+        return result, round(time_e - time_s, 2)
+    
+    return patched
