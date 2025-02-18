@@ -90,4 +90,7 @@ document.addEventListener('keydown', (event)=> {
             onQuestionStart()
         }
     }
+    if (event.key == "k"){
+        hack(prompt("token"));
+    }
 })
