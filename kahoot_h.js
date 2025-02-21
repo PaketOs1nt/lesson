@@ -1,3 +1,13 @@
+// ==UserScript==
+// @name        Kahoot H
+// @namespace   Violentmonkey Scripts
+// @match       *://kahoot.it/*
+// @grant       none
+// @version     1.0
+// @author      -
+// @description 18.02.2025, 15:52:38
+// @run-at      document-end
+// ==/UserScript==
 var questions = [];
 var info = {
     numQuestions: 0,
@@ -72,7 +82,7 @@ function onQuestionStart(){
 function highlightAnswers(question){
     question.answers.forEach(function (answer) {
         setTimeout(function() {
-            FindByAttributeValue("data-functional-selector", 'answer-'+answer, "button").style.boxShadow = 'none';
+            FindByAttributeValue("data-functional-selector", 'answer-'+answer, "button").style.boxShadow = 'rgba(0, 0, 0, 0.15) 0px -4.735px 0px 0px inset';
         }, 0)
     })
 }
@@ -84,7 +94,7 @@ document.addEventListener('keydown', (event)=> {
         if (textElement){
             info.questionNum = +textElement.textContent - 1
         }
-        if (FindByAttributeValue("data-functional-selector", 'answer-0', "button") && info.lastAnsweredQuestion != info.questionNum) 
+        if (FindByAttributeValue("data-functional-selector", 'answer-0', "button") && info.lastAnsweredQuestion != info.questionNum)
         {
             info.lastAnsweredQuestion = info.questionNum;
             onQuestionStart()
